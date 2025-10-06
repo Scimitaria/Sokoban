@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
@@ -8,17 +7,20 @@ public class Player : MonoBehaviour
     public Score score;
     public float step;
     public LayerMask obstruction;
+    private Animator animator;
     Vector2 target;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        score = GameObject.Find("Score").GetComponent<Score>();
         target = (Vector2)transform.position;
+        animator = GetComponent<Animator>();
+        score = GameObject.Find("Score").GetComponent<Score>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isMoving",target!=(Vector2)transform.position);
         transform.position = Vector2.MoveTowards(transform.position, target, step * Time.deltaTime);
     }
 
