@@ -1,19 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class Box : MonoBehaviour
 {
     public Tilemap walls;
     public LayerMask obstruction;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool atGoal;
     void Start()
     {
-
+        atGoal = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        if ((collision.name == "Goal" && gameObject.name == "Bob")||(collision.name == "Goal (1)" && gameObject.name == "Bob (1)")) atGoal = true;
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if ((collision.name == "Goal" && gameObject.name == "Bob")||(collision.name == "Goal (1)" && gameObject.name == "Bob (1)")) atGoal = false;
     }
 
     public bool CanMove(Vector2 inputValue)

@@ -212,7 +212,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
   m_FlipX: 0
@@ -301,6 +301,7 @@ MonoBehaviour:
   obstruction:
     serializedVersion: 2
     m_Bits: 8
+  atGoal: 0
 --- !u!1 &420118242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,6 +4238,7 @@ GameObject:
   - component: {fileID: 1853943369}
   - component: {fileID: 1853943368}
   - component: {fileID: 1853943373}
+  - component: {fileID: 1853943374}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4366,7 +4368,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4460,6 +4462,21 @@ PolygonCollider2D:
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
   m_UseDelaunayMesh: 0
+--- !u!114 &1853943374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853943367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062a7c1b448bf4cd78c00a8a6938300f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  boxes:
+  - {fileID: 341037106}
+  - {fileID: 2041152151}
 --- !u!1 &2041152146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,7 +4616,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4642,6 +4659,7 @@ MonoBehaviour:
   obstruction:
     serializedVersion: 2
     m_Bits: 8
+  atGoal: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
