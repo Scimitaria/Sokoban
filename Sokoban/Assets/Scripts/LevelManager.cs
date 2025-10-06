@@ -11,10 +11,10 @@ public class LevelManager : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Level 1": nextLevel = "Level 2"; break;
-            case "Level 2": nextLevel = "Level 3"; break;
-            case "Level 3": nextLevel = "End"; break;
-            default: nextLevel = "Level 1"; break;
+            case "Level1": nextLevel = "Level2"; break;
+            case "Level2": nextLevel = "Level3"; break;
+            case "Level3": nextLevel = "End"; break;
+            default: nextLevel = "Level1"; break;
         }
     }
 
