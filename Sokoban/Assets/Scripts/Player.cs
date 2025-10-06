@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
     public GameObject[] boxes;
+    public Score score;
     public float step;
-    public int movesMade;
     public LayerMask obstruction;
     Vector2 target;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        movesMade = 0;
+        score = GameObject.Find("Score").GetComponent<Score>();
         target = (Vector2)transform.position;
     }
 
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        movesMade++;
+        score.move();
         Vector2 inputValue = value.Get<Vector2>();
         RaycastHit2D check = Physics2D.Raycast(transform.position, inputValue, 1f, obstruction);
         bool colliderCheck = check.collider == null || (check.collider.gameObject.name.Contains("Bob")&&check.collider.gameObject.GetComponent<Box>().CanMove(inputValue));
