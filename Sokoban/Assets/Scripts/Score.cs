@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public int movesMade,score=0;
+    public int movesMade, score = 0;
     public Player player;
     void Awake()
     {
